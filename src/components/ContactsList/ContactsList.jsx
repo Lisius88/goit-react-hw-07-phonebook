@@ -34,7 +34,7 @@ export const ContactsList = () => {
             <p>{name}</p>
             <p>{number}</p>
           </div>
-          <Button onClick={onDeleteClick} type="button" id={id}>
+          <Button onClick={onDeleteClick} type="button" id={id} name={name}>
             X
           </Button>
         </Item>

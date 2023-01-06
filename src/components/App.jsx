@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from './redux/operations';
 import { MainContent, Title } from './App.styled';
 import { Loader } from './Loader/Loader';
+import { Toaster } from 'react-hot-toast';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export const App = () => {
       <Form />
       {isLoading && !error && <Loader />}
       <ContactsList />
+      <Toaster position="top-right" reverseOrder={false} />
     </MainContent>
   );
 };

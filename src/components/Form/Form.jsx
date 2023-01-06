@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addContact } from 'components/redux/operations';
 import { useSelector } from 'react-redux';
 import { Button, FormContent, Input, Label } from './Form.styled';
+import toast from 'react-hot-toast';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export const Form = () => {
 
   const submit = data => {
     if (listContainsContact(data)) {
-      return alert(`${data.name} is already in contacts.`);
+      return toast.error(`${data.name} is already in contacts.`);
     }
     dispatch(addContact(data));
     reset();

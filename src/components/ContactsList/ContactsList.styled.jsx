@@ -41,7 +41,6 @@ export const Button = styled.button`
   background: #02788d;
   transition: box-shadow 0.3s, transform 0.3s;
   cursor: pointer;
-  z-index: 1;
 
   :hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
