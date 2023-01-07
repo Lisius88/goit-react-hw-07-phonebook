@@ -24,7 +24,7 @@ export const App = () => {
       <Filter />
       <Form />
       {isLoading && !error && <Loader />}
-      {!isLoading && <ContactsList />}
+      <ContactsList />
       <Toaster position="top-right" reverseOrder={false} />
     </MainContent>
   );
