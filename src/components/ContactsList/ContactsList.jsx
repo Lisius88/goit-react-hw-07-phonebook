@@ -11,6 +11,7 @@ export const ContactsList = () => {
     dispatch(deleteContact(idToDelete));
   };
   const contacts = useSelector(state => state.contacts.items);
+  const isLoading = useSelector(state => state.contacts.isLoading);
   const contactsFilter = useSelector(state => state.filter);
   const filteredContacts = contacts.filter(contacts =>
     contacts.name.toLowerCase().includes(contactsFilter)
@@ -19,7 +20,7 @@ export const ContactsList = () => {
   const contactsListEmpty = useSelector(contactsIsEmpty);
 
   if (contacts.length === 0) {
-    return <Notiffication>There are no contacts</Notiffication>;
+    return !isLoading && <Notiffication>There are no contacts</Notiffication>;
   }
   if (!contactsListEmpty && filteredContacts.length === 0) {
     return <Notiffication>No contact with such name found</Notiffication>;
